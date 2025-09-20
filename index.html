@@ -89,4 +89,25 @@ function check(choice,el){
     document.getElementById("msg").textContent="خطأ ❌ الصحيح: "+item.correct;
     document.getElementById("msg").style.color="red";
   }
-  updateScore()
+  updateScore();
+}
+
+function updateScore(){
+  document.getElementById("score").textContent="العلامة: "+score+" / "+data.length;
+}
+
+function nextWord(){
+  index++;
+  if(index>=data.length){
+    document.getElementById("word").textContent="انتهى الاختبار 🙂";
+    document.getElementById("options").innerHTML='';
+    document.getElementById("msg").textContent='';
+    updateScore();
+    document.getElementById("nextBtn").style.display="none";
+  } else showWord();
+}
+
+showWord();
+</script>
+</body>
+</html>
